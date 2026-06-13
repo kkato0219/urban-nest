@@ -1,0 +1,102 @@
+/* ================================
+   CSS RESET
+================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #0A0A0A;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ================================
+   CSS VARIABLES
+================================ */
+
+:root {
+  --color-black:        #0A0A0A;
+  --color-card:         #1A1A1A;
+  --color-border:       #2A2A2A;
+  --color-white:        #FFFFFF;
+  --color-gray:         #888888;
+  --color-gold:         #C9A84C;
+  --color-gold-dark:    #8B6914;
+  --color-gold-light:   #E8C97A;
+
+  --font-jp:      'Noto Sans JP', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-sans:    'Inter', sans-serif;
+
+  --section-padding-desktop: 96px;
+  --section-padding-mobile:  56px;
+  --container-max:           1100px;
+  --container-side-desktop:  40px;
+  --container-side-mobile:   20px;
+
+  --radius-card:   12px;
+  --radius-btn:    6px;
+  --transition:    all 0.3s ease;
+}
+
+/* ================================
+   COMMON LAYOUT
+================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-side-desktop);
+}
+
+.section-padding {
+  padding: var(--section-padding-desktop) 0;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 var(--container-side-mobile);
+  }
+
+  .section-padding {
+    padding: var(--section-padding-mobile) 0;
+  }
+}
