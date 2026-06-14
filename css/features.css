@@ -1,0 +1,225 @@
+/* ================================
+   FEATURES
+================================ */
+
+.features {
+    background-color: var(--color-card);
+    padding: var(--section-padding-desktop) 0;
+    border-top: 1px solid var(--color-border);
+}
+
+/* ================================
+   CONTAINER
+================================ */
+
+.features__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-side-desktop);
+}
+
+/* ================================
+   SECTION HEADER
+================================ */
+
+.features__header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.features__eyebrow {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-gold);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.features__title {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.features__subtitle {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+}
+
+/* ================================
+   GRID
+================================ */
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* ================================
+   CARD
+================================ */
+
+.features__card {
+    background-color: var(--color-black);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.features__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--color-gold),
+        transparent
+    );
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.features__card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(201, 168, 76, 0.1);
+}
+
+.features__card:hover::before {
+    opacity: 1;
+}
+
+/* ================================
+   CARD NUMBER
+================================ */
+
+.features__card-number {
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 700;
+    color: rgba(201, 168, 76, 0.1);
+    line-height: 1;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.features__card:hover .features__card-number {
+    color: rgba(201, 168, 76, 0.2);
+}
+
+
+/* ================================
+   CARD ICON
+================================ */
+
+.features__card-icon {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(201, 168, 76, 0.1);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+    margin-bottom: 24px;
+    transition: var(--transition);
+}
+
+.features__card:hover .features__card-icon {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+
+/* ================================
+   CARD TITLE
+================================ */
+
+.features__card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+/* ================================
+   CARD DESCRIPTION
+================================ */
+
+.features__card-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+}
+
+/* ================================
+   RESPONSIVE — TABLET
+================================ */
+
+@media (max-width: 1024px) {
+    .features__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .features__card:last-child {
+        grid-column: 1 / 1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* ================================
+   RESPONSIVE — MOBILE
+================================ */
+
+@media (max-width: 767px) {
+    .features {
+        padding: var(--section-padding-mobile);
+    }
+
+    .features__container {
+        padding: 0 var(--container-side-mobile);
+    }
+
+    .features__title {
+        font-size: 28px;
+    }
+
+    .features__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .features__card:last-child {
+        grid-column: auto;
+        max-width: 100%;
+    }
+
+    .features__card {
+        padding: 28px 24px;
+    }
+
+    .features__card-number {
+        font-size: 40px;
+    }
+}
+
+

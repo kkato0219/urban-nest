@@ -56,3 +56,62 @@ particlesJS('particles-js', {
         }
     }
 });
+
+// ================================
+// CountUp — Stats
+// ================================
+const statsSection = document.querySelector('.stats');
+
+if (statsSection) {
+  const countUpObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counts = document.querySelectorAll('.stats__count');
+        counts.forEach(el => {
+          const target = parseInt(el.getAttribute('data-target'));
+          let start = 0;
+          const duration = 2000;
+          const step = Math.ceil(target / (duration / 16));
+
+          const timer = setInterval(() => {
+            start += step;
+            if (start >= target) {
+              el.textContent = target.toLocaleString();
+              clearInterval(timer);
+            } else {
+              el.textContent = start.toLocaleString();
+            }
+          }, 16);
+        });
+        countUpObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  countUpObserver.observe(statsSection);
+}
+
+// ================================
+// Swiper — Properties
+// ================================
+new Swiper('.properties__swiper', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+    navigation: {
+        nextEl: '.properties__next',
+        prevEl: '.properties__prev',
+    },
+    pagination: {
+        el: '.properties__pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
+});
