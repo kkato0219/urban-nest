@@ -1,0 +1,211 @@
+/* ================================
+   AREA
+================================ */
+
+.area {
+    background-color: var(--color-black);
+    padding: var(--section-padding-desktop) 0;
+    overflow: hidden;
+}
+
+/* ================================
+   CONTAINER
+================================ */
+
+.area__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-side-desktop);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* ================================
+   LEFT — CONTENT
+================================ */
+
+.area__eyebrow {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-gold);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.area__title {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.area__description {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* ================================
+   AREA LIST
+================================ */
+
+.area__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.area__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    transition: var(--transition);
+}
+
+.area__item:hover {
+    border-color: var(--color-gold);
+    transform: translateX(6px);
+}
+
+.area__item-icon {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(201, 168, 76, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.area__item:hover .area__item-icon {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+.area__item-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 4px;
+}
+
+.area__item-desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.area__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-jp);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-black);
+    background-color: var(--color-gold);
+    padding: 14px 32px;
+    border-radius: var(--radius-btn);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.area__btn:hover {
+    background-color: var(--color-gold-light);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   RIGHT — VISUAL
+================================ */
+
+.area__visual {
+    position: relative;
+}
+
+.area__image-wrap {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.area__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.area__image-wrap:hover .area__image {
+    transform: scale(1.04);
+}
+
+.area__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 10, 10, 0.3) 0%,
+        rgba(201, 168, 76, 0.1) 100%
+    );
+}
+
+/* ================================
+   RESPONSIVE — TABLET
+================================ */
+
+@media (max-width: 1024px) {
+    .area__container {
+        gap: 48px;
+    }
+
+    .area__title {
+        font-size: 32px;
+    }
+}
+
+/* ================================
+   RESPONSIVE — MOBILE
+================================ */
+
+@media (max-width: 767px) {
+    .area {
+        padding: var(--section-padding-mobile) 0;
+    }
+
+    .area__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 var(--container-side-mobile);
+    }
+
+    .area__title {
+        font-size: 28px;
+    }
+
+    .area__visual {
+        order: -1;
+    }
+}
