@@ -115,3 +115,25 @@ new Swiper('.properties__swiper', {
         },
     },
 });
+
+// ================================
+// Swiper — Testimonials
+// ================================
+new Swiper('.testimonials__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  loop: true,
+  pagination: {
+    el: '.testimonials__pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
