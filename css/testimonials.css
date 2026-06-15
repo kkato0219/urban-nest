@@ -135,7 +135,7 @@
     object-fit: cover;
     object-position: center top;
     display: block;
-    filter: grayscale(100%);
+    filter: none;
 }
 
 /* Info */

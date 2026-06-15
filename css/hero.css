@@ -15,26 +15,21 @@
 
 /* Background Image */
 .hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  transform: scale(1.05);
-  transition: transform 8s ease;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero__bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .hero:hover .hero__bg {
   transform: scale(1.0);
-}
-
-/* Video */
-.hero__video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
 }
 
 /* Overlay */
@@ -47,13 +42,6 @@
         rgba(10, 10, 10, 0.60) 100%
     );
     z-index: 1;
-}
-
-/* Particles */
-#particles-js {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
 }
 
 /* Content */
