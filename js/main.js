@@ -159,3 +159,112 @@ faqItems.forEach(item => {
         }
     });
 });
+
+// ================================
+// Form Validation
+// ================================
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let isValid = true;
+
+    // Name
+    const name = document.getElementById('name');
+    const nameError = document.getElementById('nameError');
+    if (!name.value.trim()) {
+      nameError.textContent = 'お名前を入力してください';
+      name.classList.add('is-error');
+      isValid = false;
+    } else {
+      nameError.textContent = '';
+      name.classList.remove('is-error');
+    }
+
+    // Email
+    const email = document.getElementById('email');
+    const emailError = document.getElementById('emailError');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.value.trim()) {
+      emailError.textContent = 'メールアドレスを入力してください';
+      email.classList.add('is-error');
+      isValid = false;
+    } else if (!emailRegex.test(email.value)) {
+      emailError.textContent = '正しいメールアドレスを入力してください';
+      email.classList.add('is-error');
+      isValid = false;
+    } else {
+      emailError.textContent = '';
+      email.classList.remove('is-error');
+    }
+
+    // Area
+    const area = document.getElementById('desiredArea');
+    const areaError = document.getElementById('areaError');
+    if (!area.value) {
+      areaError.textContent = '希望エリアを選択してください';
+      area.classList.add('is-error');
+      isValid = false;
+    } else {
+      areaError.textContent = '';
+      area.classList.remove('is-error');
+    }
+
+    // Message
+    const message = document.getElementById('message');
+    const messageError = document.getElementById('messageError');
+    if (!message.value.trim()) {
+      messageError.textContent = 'ご相談内容を入力してください';
+      message.classList.add('is-error');
+      isValid = false;
+    } else {
+      messageError.textContent = '';
+      message.classList.remove('is-error');
+    }
+
+    // Success
+    if (isValid) {
+      contactForm.reset();
+      document.getElementById('contactSuccess').classList.add('is-visible');
+    }
+  });
+}
+
+// ================================
+// Navbar Scroll
+// ================================
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// ================================
+// Navbar Hamburger
+// ================================
+const hamburger = document.querySelector('.navbar__hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('is-open');
+    mobileMenu.classList.toggle('is-open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+  });
+
+  // Close menu when link clicked
+  document.querySelectorAll('.navbar__mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('is-open');
+      mobileMenu.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+  });
+}

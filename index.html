@@ -38,6 +38,56 @@
 </head>
 <body>
 
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__container">
+
+            <!-- Logo -->
+            <a href="#home" class="navbar__logo">
+                URBAN NEST
+            </a>
+
+            <!-- Desktop Nav -->
+            <ul class="navbar__nav">
+                <li><a href="#properties" class="navbar__link">物件を見る</a></li>
+                <li><a href="#area" class="navbar__link">エリア</a></li>
+                <li><a href="#features" class="navbar__link">選ばれる理由</a></li>
+                <li><a href="#testimonials" class="navbar__link">お客様の声</a></li>
+                <li><a href="#faq" class="navbar__link">よくある質問</a></li>
+                <li>
+                    <a href="#contact" class="navbar__link navbar__link--cta">
+                    内見予約
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Hamburger -->
+            <button
+                class="navbar__hamburger"
+                aria-label="メニューを開く"
+                aria-expanded="false"
+            >
+                <span class="navbar__hamburger-line"></span>
+                <span class="navbar__hamburger-line"></span>
+                <span class="navbar__hamburger-line"></span>
+            </button>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="navbar__mobile" id="mobileMenu" aria-hidden="true">
+            <ul class="navbar__mobile-nav">
+                <li><a href="#properties" class="navbar__mobile-link">物件を見る</a></li>
+                <li><a href="#area" class="navbar__mobile-link">エリア</a></li>
+                <li><a href="#features" class="navbar__mobile-link">選ばれる理由</a></li>
+                <li><a href="#testimonials" class="navbar__mobile-link">お客様の声</a></li>
+                <li><a href="#faq" class="navbar__mobile-link">よくある質問</a></li>
+                <li><a href="#contact" class="navbar__mobile-link navbar__mobile-link--cta">内見予約</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
     <!-- Hero -->
     <section class="hero" id="home">
 
@@ -722,6 +772,249 @@
 
     </div>
 </section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <div class="contact__container">
+
+        <!-- Section Header -->
+        <div class="contact__header" data-aos="fade-up">
+            <span class="contact__eyebrow">CONTACT</span>
+            <h2 class="contact__title">お気軽にご相談ください</h2>
+            <p class="contact__subtitle">
+                内見予約・物件のご相談など、まずはお気軽にお問い合わせください。<br>
+                専任エージェントが丁寧にご対応します。
+            </p>
+        </div>
+
+        <!-- Contact Content -->
+        <div class="contact__content">
+
+            <!-- Left: Form -->
+            <div class="contact__form-wrap" data-aos="fade-right">
+                <form class="contact__form" id="contactForm" novalidate>
+
+                    <!-- Name -->
+                    <div class="contact__field">
+                        <label class="contact__label" for="name">
+                            お名前 <span class="contact__required">*</span>
+                        </label>
+                        <input 
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="contact__input"
+                            placeholder="山田　太郎"
+                            autocomplete="name"
+                        />
+                        <span class="contact__error" id="nameError"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="contact__field">
+                        <label class="contact__label" for="email">
+                            メールアドレス　<span class="contact__required">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="contact__input"
+                            placeholder="example@email.com"
+                            autocomplete="email"
+                        />
+                        <span class="contact__error" id="emailError"></span>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="contact__field">
+                        <label class="contact__label" for="phone">
+                            電話番号
+                        </label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            class="contact__input"
+                            placeholder="090-0000-0000"
+                            autocomplete="tel"
+                        />
+                    </div>
+
+                    <!-- Area -->
+                    <div class="contact__field">
+                        <label class="contact__label" for="desiredArea">
+                            希望エリア　<span class="contact__required">*</span>
+                        </label>
+                        <select id="desiredArea" name="area" class="contact__select">
+                            <option value="">選択してください</option>
+                            <option value="shibuya">渋谷区・港区</option>
+                            <option value="shinjuku">新宿区・目黒区</option>
+                            <option value="shinagawa">品川区・江東区</option>
+                            <option value="setagaya">世田谷区・杉並区</option>
+                            <option value="other">その他</option>
+                        </select>
+                        <span class="contact__error" id="areaError"></span>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="contact__field">
+                        <label class="contact__label" for="message">
+                            ご相談内容　<span class="contact__required">*</span>
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            class="contact__textarea"
+                            placeholder="ご希望の条件や気になる点をお気軽にご記入ください"
+                            rows="5"
+                        ></textarea>
+                        <span class="contact__error" id="messageError"></span>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="contact__btn">
+                        <span class="contact__btn-text">送信する</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </button>
+
+                    <!-- Success Message -->
+                    <div class="contact__success" id="contactSuccess">
+                        <p>お問い合わせありがとうございます。担当者よりご連絡いたします。</p>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Right: Info -->
+            <div class="contact__info" data-aos="fade-left">
+
+                <div class="contact__info-card">
+                    <div class="contact__info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <div class="contact__info-text">
+                        <p class="contact__info-label">電話番号</p>
+                        <p class="contact__info-value">03-0000-0000</p>
+                        <p class="contact__info-note">平日 10:00〜19:00</p>
+                    </div>
+                </div>
+
+                <div class="contact__info-card">
+                    <div class="contact__info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <div class="contact__info-text">
+                        <p class="contact__info-label">メールアドレス</p>
+                        <p class="contact__info-value">info@urbannest.jp</p>
+                        <p class="contact__info-note">24時間受付</p>
+                    </div>
+                </div>
+
+                <div class="contact__info-card">
+                    <div class="contact__info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div class="contact__info-text">
+                        <p class="contact__info-label">営業時間</p>
+                        <p class="contact__info-value">平日 10:00〜19:00</p>
+                        <p class="contact__info-note">土日祝も対応可（要予約）</p>
+                    </div>
+                </div>
+
+                <div class="contact__info-card">
+                    <div class="contact__info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <div class="contact__info-text">
+                        <p class="contact__info-label">所在地</p>
+                        <p class="contact__info-value">東京都渋谷区</p>
+                        <p class="contact__info-note">オンライン相談も可能です</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer__container">
+
+        <!-- Top -->
+        <div class="footer__top">
+
+            <!-- Brand -->
+            <div class="footer__brand">
+                <p class="footer__logo">URBAN NEST</p>
+                <p class="footer__tagline">都市で暮らす、理想を見つける。</p>
+                <p class="footer__desc">
+                    東京都心を中心に、プレミアムな賃貸物件をご紹介。
+                    専任エージェントがあなたの理想の部屋探しをサポートします。
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div class="footer__links">
+                <div class="footer__links-group">
+                    <h3 class="footer__links-title">サービス</h3>
+                    <ul class="footer__links-list">
+                        <li><a href="#properties" class="footer__link">物件を探す</a></li>
+                        <li><a href="#area" class="footer__link">対応エリア</a></li>
+                        <li><a href="#features" class="footer__link">選ばれる理由</a></li>
+                        <li><a href="#contact" class="footer__link">内見予約</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links-group">
+                    <h3 class="footer__links-title">会社情報</h3>
+                    <ul class="footer__links-list">
+                        <li><a href="#" class="footer__link">会社概要</a></li>
+                        <li><a href="#" class="footer__link">採用情報</a></li>
+                        <li><a href="#" class="footer__link">プライバシーポリシー</a></li>
+                        <li><a href="#" class="footer__link">利用規約</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links-group">
+                    <h3 class="footer__links-title">お問い合わせ</h3>
+                    <ul class="footer__links-list">
+                        <li><a href="tel:03-0000-0000" class="footer__link">03-0000-0000</a></li>
+                        <li><a href="mailto:info@urbannest.jp" class="footer__link">info@urbannest.jp</a></li>
+                        <li><p class="footer__link-text">平日 10:00〜19:00</p></li>
+                        <li><p class="footer__link-text">土日祝も対応可（要予約）</p></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Divider -->
+        <div class="footer__divider"></div>
+
+        <!-- Bottom -->
+        <div class="footer__bottom">
+            <p class="footer__copy">© 2026 URBAN NEST. All Rights Reserved.</p>
+            <div class="footer__bottom-links">
+                <a href="#" class="footer__bottom-link">プライバシーポリシー</a>
+                <a href="#" class="footer__bottom-link">利用規約</a>
+                <a href="#" class="footer__bottom-link">サイトマップ</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
 
 
 
